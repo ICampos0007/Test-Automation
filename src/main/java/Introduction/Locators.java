@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Locators {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver","C:/Users/irvin/Desktop//selenium-server/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -31,6 +31,11 @@ public class Locators {
         driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
 //        System.out.println(driver.findElement(By.className("infoMsg")).getText());
         System.out.println(driver.findElement(By.cssSelector("form p")).getText());
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("#inputUsername"));
+        driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
+        driver.findElement(By.id("chkboxOne")).click();
+        driver.findElement(By.xpath("//button[contains(@class, 'submit')]")).click();
     }
 
 }
