@@ -32,6 +32,7 @@ public class LocatorsTwo {
 
 
     }
+//    this method helps you get the password dynamically
     public static String getPassword(WebDriver driver) throws InterruptedException {
 
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
