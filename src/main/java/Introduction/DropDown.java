@@ -21,7 +21,7 @@ public class DropDown {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@value= 'BLR']")).click();
         Thread.sleep(2000);
-//        valid why but some dont like indexes
+//        valid why but some don't like indexes
 //        driver.findElement(By.xpath("(//a[@value = 'MAA'])[2]")).click();
 //        another way to do it using parent-child
         driver.findElement(By.xpath("//div[@id = 'glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value = 'MAA']")).click();
