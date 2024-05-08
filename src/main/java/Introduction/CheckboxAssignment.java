@@ -12,9 +12,9 @@ public class CheckboxAssignment {
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
         driver.findElement(By.xpath("//input[@id = 'checkBoxOption1']")).click();
-        System.out.println(driver.findElement(By.xpath("//input[@id = 'checkBoxOption1']")).isSelected());
+        Assert.assertTrue(driver.findElement(By.xpath("//input[@id = 'checkBoxOption1']")).isSelected());
         driver.findElement(By.xpath("//input[@id = 'checkBoxOption1']")).click();
-        System.out.println(driver.findElement(By.xpath("//input[@id = 'checkBoxOption1']")).isSelected());
+        Assert.assertFalse(driver.findElement(By.xpath("//input[@id = 'checkBoxOption1']")).isSelected());
         System.out.println(driver.findElements(By.cssSelector("input[type = 'checkbox']")).size());
 
     }

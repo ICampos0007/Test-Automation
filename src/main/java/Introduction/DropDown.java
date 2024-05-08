@@ -2,14 +2,16 @@ package Introduction;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class DropDown {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","C:/Users/irvin/Desktop//selenium-server/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/Users/irvin/Desktop//selenium-server/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -26,5 +28,7 @@ public class DropDown {
 //        another way to do it using parent-child
         driver.findElement(By.xpath("//div[@id = 'glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value = 'MAA']")).click();
 
+        //        Calendar
+        driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
     }
 }
