@@ -56,7 +56,7 @@ public class ExplicitWaitAssignment {
         webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//h4[@class='card-title']")));
         List<WebElement> products = driver.findElements(By.xpath("//h4[@class='card-title']"));
         for (int i =0; i< products.size(); i++) {
-            List itemsNeededList = Arrays.asList(itemsNeeded);
+            List<String> itemsNeededList = Arrays.asList(itemsNeeded);
             if (itemsNeededList.contains(itemsNeeded)) {
                 count++;
                 driver.findElements(By.xpath("//button[@class='btn btn-info']")).get(i).click();
