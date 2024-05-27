@@ -92,6 +92,5 @@ public class Test1 {
 //        values.stream().distinct().forEach(System.out::println);
         List<Integer> li = values.stream().distinct().sorted().collect(Collectors.toList());
         System.out.println(li.get(2));
-
     }
 }
