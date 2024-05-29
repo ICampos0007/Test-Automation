@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Practice Suite">
+    <test name="Practice Test" verbose="1" parallel="tests" thread-count="10">
+        <classes>
+            <class name="Introduction.TestDay1">
+                <methods>
+                    <include name="demo"/>
+                </methods>
+            </class>
+            <class name="Introduction.TestDay2"/>
+            <class name="Introduction.TestDay4"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Login Test">
+        <classes>
+            <class name="Introduction.TestDay3">
+                <methods>
+                    <exclude name="mobile.*"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+    
+</suite> <!-- Suite -->
