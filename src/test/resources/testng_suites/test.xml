@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Practice Suite">
-    <test name="Practice Test" verbose="1" parallel="tests" thread-count="10">
+<suite name="Practice Suite" verbose="1" parallel="tests" thread-count="10">
+    <listeners>
+        <listener class-name="Introduction.Listeners"/>
+    </listeners>
+    <parameter name="URL" value="qaclickacademy.com"/>
+    <test name="Practice Test">
+        <parameter name="URL" value="test.com"/>
         <classes>
             <class name="Introduction.TestDay1">
                 <methods>
@@ -13,11 +18,13 @@
         </classes>
     </test> <!-- Test -->
     <test name="Login Test">
+        <parameter name="URL" value="carLoan.com"/>
+         <parameter name="APIKey/username" value="123456"/>
         <classes>
             <class name="Introduction.TestDay3">
-                <methods>
-                    <exclude name="mobile.*"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <exclude name="mobile.*"/>-->
+<!--                </methods>-->
             </class>
 
         </classes>

@@ -1,15 +1,18 @@
 package Introduction;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TestDay4 {
+    @Parameters({"URL"})
     @Test
-    public void webLoginHome() {
+    public void webLoginHome(String uname) {
 //    selenium
         System.out.println("Web login home");
+        System.out.println(uname);
     }
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void mobileLoginHome() {
 //    appium
         System.out.println("appium login home");

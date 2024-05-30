@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Practice Suite">
+    <test name="Regression" verbose="1" parallel="tests" thread-count="10">
+        <groups>
+            <run>
+                <exclude name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Introduction.TestDay1"/>
+            <class name="Introduction.TestDay2"/>
+            <class name="Introduction.TestDay4"/>
+            <class name="Introduction.TestDay3"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
