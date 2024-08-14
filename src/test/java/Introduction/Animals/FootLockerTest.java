@@ -24,7 +24,7 @@ public class FootLockerTest {
         driver.findElement(By.xpath("//div[@class='SearchResults']/ul/li[2]")).click();
         String Result = driver.findElement(By.xpath("//div[@class='Heading ProductName']/h1/span[1]")).getText();
         System.out.println(Result);
-        Assert.assertEquals("Jordan Retro 6", Result);
+        Assert.assertEquals("Jordan Retro 4", Result);
         driver.findElement(By.xpath("//div[@class ='slick-slide slick-active'][2]")).click();
     }
 
