@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -19,6 +20,7 @@ public class TargetTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.target.com/");
+        String ItemName = "Bose SoundLink Revolve Plus II Portable Bluetooth Speaker - Gray";
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 //        validate if target logo is visible
         System.out.println(driver.findElement(By.xpath("//a[@aria-label='Target home'][1]")).isDisplayed());
@@ -38,10 +40,10 @@ public class TargetTest {
         for (WebElement promoDeal: promoDeals) {
             System.out.println(promoDeal.getText());
         }
-        int randomIntIwantToClick = 1;
+        int randomIntIWantToClick = 1;
 
         for (int i = 0; i < promoDeals.size(); i++) {
-            if (i == randomIntIwantToClick) {
+            if (i == randomIntIWantToClick) {
                 // Find the button within the specific promo deal and click it
                 WebElement button = promoDeals.get(i).findElement(By.xpath(".//button[@type='button']"));
                 button.click();
@@ -56,7 +58,12 @@ public class TargetTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Carousel']/ul/li[2]")));
         driver.findElement(By.xpath("//div[@aria-label='Carousel']/ul/li[2]")).click();
 //            now finally add it to cart.
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='addToCartButtonOrTextIdFor82077492']")));
-        driver.findElement(By.xpath("//button[@id='addToCartButtonOrTextIdFor82077492']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='styles__ThreeUpButtonWrapper-sc-11rka0i-0 gfFifD']")));
+        driver.findElement(By.xpath("//div[@class='styles__ThreeUpButtonWrapper-sc-11rka0i-0 gfFifD']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[@class='styles__StyledHeading-sc-1awz1yh-0 gonTex']")));
+        String actualName = driver.findElement(By.xpath("//h4[@class='styles__StyledHeading-sc-1awz1yh-0 gonTex']")).getText();
+        Assert.assertEquals(ItemName,actualName);
+//        decline the coverage
+        driver.findElement(By.xpath("//div[@class='h-margin-t-default']/button[2]")).click();
     }
 }
